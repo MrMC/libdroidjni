@@ -32,6 +32,7 @@ public:
   int getPhysicalHeight();
   int getPhysicalWidth();
   float getRefreshRate();
+  int getModeId();
 
 protected:
   CJNIDisplayMode();
@@ -44,11 +45,12 @@ public:
   CJNIDisplay(const jni::jhobject &object) : CJNIBase(object) {};
   ~CJNIDisplay() {};
 
-  float getRefreshRate();
-  std::vector<float> getSupportedRefreshRates();
-  CJNIDisplayMode getMode();
   int getWidth();
   int getHeight();
+  float getRefreshRate();
+  std::vector<float> getSupportedRefreshRates();
+
+  CJNIDisplayMode getMode();
   std::vector<CJNIDisplayMode> getSupportedModes();
 };
 
